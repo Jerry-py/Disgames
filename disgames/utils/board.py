@@ -12,9 +12,8 @@ class Board:
         self.test = test
 
     def __str__(self):
-        lst = []
         g = [f"{self.seperator}{i}" for i in range(self.x + 1)]
-        lst.append(g)
+        lst = [g]
         for i in range(self.x):
             lst.append([f"{self.seperator}{i+1}"])
             for _ in range(self.y):
