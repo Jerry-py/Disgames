@@ -32,7 +32,7 @@ So your bot __init__ function would look like this:
 class Bot(commands.Bot):
     def __init__(self):
         super().__init__(command_prefix='!', intents=discord.Intents.all())
-        register_commands(self, ignore=[], stockfish_path=None, ttt_reactions=False) # defualt
+        register_commands(self, ignore=[], stockfish_path=None, ttt_reactions=False, button_commands=True) # If you don't have discord.py 2.0.0a or higher, you can't use the button commands.
 ```
 
 !!! tip
