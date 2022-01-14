@@ -28,6 +28,8 @@ nav:
     - Sudoko: mixins/sudoko.md
     - Tictactoe: mixins/tictactoe.md
     - 2048: mixins/2048.md
+    - Akinator: mixins/akinator.md
+    - Blackjack: mixins/blackjack.md
 
 theme:
   name: material
