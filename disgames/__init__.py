@@ -17,16 +17,16 @@ __title__ = 'disgames'
 __author__ = 'andrewthederp'
 __license__ = 'Apache License 2.0'
 __copyright__ = 'Copyright 2021-2022 Andrewthederp and MarzaElise'
-__version__ = '2.3.0'
+__version__ = '2.3.1'
 
-def register_commands(
+async def register_commands(
     bot, *, ignore: list = [], stockfish_path=None, ttt_reactions=False, button_commands=True
 ):
-    if button_commands:
-        ignore.extend(BUTTON_GAMES if not buttons else NON_BUTTON_GAMES)
+    games = []
+    if button_commands and buttons:
+        ignore.extend(NON_BUTTON_GAMES)
     else:
         ignore.extend(BUTTON_GAMES)
-    games = []
     if ttt_reactions:
         ignore.append(TicTacToe)
         ignore.append(TicTacToeButtons)
@@ -41,7 +41,7 @@ def register_commands(
     g = Games(bot)
     if stockfish_path:
         g.stockfish_path = stockfish_path
-    bot.add_cog(g)
+    await bot.add_cog(g)
 
 class VersionInfo(NamedTuple):
     major: int
